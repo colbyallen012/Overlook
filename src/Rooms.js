@@ -17,7 +17,7 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/rooms/rooms')
     }
 
     getRooms(){
-      this.rooms.push(roomsFetchData)
+      this.rooms.push(roomsFetchData);
       console.log('Rooms',this.rooms)
     }
 

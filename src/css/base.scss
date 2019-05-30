@@ -1,6 +1,53 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+$primary-font: 'Lora';
+$primary-color: #C9FBFF;
+$secondary-color: #1D202D;
+$third-color: #CCDBDC;
 
 body {
-  background-color: $primary-background;
+  background-color: $primary-color;
+}
+
+header {
+  background-color: $third-color;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 98%;
+}
+
+.building {
+  height: 110px;
+  width: 120px;
+}
+
+h1 {
+  color: $secondary-color;
+  font-family: $primary-font;
+  font-size: 80px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.dateTime {
+  // align-self: flex-end;
+  color: $secondary-color;
+  // margin: 0px 20px 5px auto;
+  font-family: $primary-font;
+  font-size: 30px;
+}
+
+section {
+  background-color: $third-color;
+  border: 3px solid black;
+  margin: 10px auto;
+  width: 98%;
+}
+
+article {
+  background-color: $third-color;
+  border: 3px solid black;
+  height: 200px;
+  margin: 10px auto;
+  width: 98%;
 }
