@@ -15,11 +15,12 @@ class Dashboard {
   getDash(){
     this.users = new Users()
     this.users.getUsers();
-    this.rooms = new Rooms()
+    this.rooms = new Rooms();
     this.rooms.getRooms();
-    this.bookings = new Bookings()
+    this.bookings = new Bookings();
     this.bookings.getBookings();
-    this.roomServices = new RoomServices()
+    this.bookings.findTodaysBookings();
+    this.roomServices = new RoomServices();
     this.roomServices.getServices();
   }
 
