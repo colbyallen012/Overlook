@@ -1,3 +1,4 @@
+import DOMupdates from './DOMupdates.js'
 import fetch from 'cross-fetch';
 
 var bookingsFetchData;
@@ -14,7 +15,6 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/bookings/bookings')
   class Bookings {
     constructor() {
       this.bookings = []
-      this.date;
     }
 
     getBookings() {
@@ -22,14 +22,21 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/bookings/bookings')
       console.log('Bookings',this.bookings)
     }
 
-    findTodaysBookings() {
-      console.log(this.bookings[0])
+    findTodaysBookings(today) {
+      console.log(today)
       let date = this.bookings[0].filter(booking => {
-        return booking.date === "21/08/2019"
+        return booking.date === today
       })
 
-      this.date = date;
-      console.log(this.date)
+      DOMupdates.displayTodaysBookings(this.bookings[0].length - date.length)
+    }
+
+    percentBookedToday(today) {
+      let todayDate = this.bookings[0].filter(booking => {
+        return booking.date === today
+      })
+
+      DOMupdates.displayPercentBooked(todayDate.length / this.bookings[0].length)
     }
 
   }

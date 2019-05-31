@@ -9,33 +9,39 @@
     <h1>Overlook</h1>
   </header>
   <body>
-    <section class='users'>
-      <h2 class='dateTime'>Stats for: <span id='datetime'><span></h2>
-      <button class='test'>Test</button>
-    </section>
-    <section class='users'>
-      <h2>Customers</h2>
-    </section>
-    <article>
-      <p>Customer Info</p>
-    </article>
-    <section class='users'>
-      <h2>Bookings</h2>
-    </section>
-    <article>
-      <p>Booking Info</p>
-    </article>
-    <section class='users'>
-      <h2>Rooms</h2>
-    </section>
-    <article>
-      <p>Room Info</p>
-    </article>
-    <section class='users'>
-      <h2>Room Services</h2>
-    </section>
-    <article>
-      <p>Room Service Info</p>
-    </article>
+  <div class="container">
+    <ul class="tabs">
+      <li class="tab-link current" data-tab="tab-1">Main</li>
+      <li class="tab-link" data-tab="tab-2">Orders</li>
+      <li class="tab-link" data-tab="tab-3">Rooms & Bookings</li>
+      <li class="tab-link" data-tab="tab-4">Customers</li>
+    </ul>
+    <div id="tab-1" class="tab-content current">
+        <h2 class='dateTime'>Dashboard for: <span id='datetime'><span></h2>
+        <button class='test'>Start Today</button>
+        <p class='dashBoard'>Rooms Available: <span id='todayBookings'><span></span></p>
+        <p class='dashBoard'>Total Owed/Earned: $ <span id='todayRevenue'></span></p>
+        <p class='dashBoard'>Percent Of Rooms Booked: <span id='percentBooked'></span>%</p>
+    </div>
+    <div id="tab-2" class="tab-content">
+        <h2>Orders info/room services</h2>
+    </div>
+    <div id="tab-3" class="tab-content">
+        <h2>Room & Bookings Info</h2>
+    </div>
+    <div id="tab-4" class="tab-content">
+        <h2 class='customerDisplay'>Customer Info</h2>
+        <article class='inputContainer'>
+          <article class='existingContainer'>
+            <input type='text' class='searchUser' placeholder="Search for an existing customer">
+            <button class='searchCust'>Search</button>
+          </article>
+          <article class='newContainer'>
+            <input type='text' class='addUser' placeholder="Add a new customer">
+            <button class='addCust'>Add</button>
+          </article>
+        </article>
+    </div>
+  </div>
   </body>
 </html>
