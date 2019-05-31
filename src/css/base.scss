@@ -12,7 +12,7 @@ header {
   border: 3px solid black;
   display: flex;
   flex-direction: row;
-  margin: auto;
+  margin: 0 auto 20px auto;
   width: 98%;
 }
 
@@ -29,25 +29,99 @@ h1 {
   margin: 10px;
 }
 
-.dateTime {
-  // align-self: flex-end;
+.container {
+  font-family: $primary-font;
+  height: 100%;
+  margin: auto;
+  width: 98%;
+}
+
+ul.tabs{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+ul.tabs li{
+  background-color: $third-color;
   color: $secondary-color;
-  // margin: 0px 20px 5px auto;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 15px;
   font-family: $primary-font;
   font-size: 30px;
 }
 
-section {
-  background-color: $third-color;
-  border: 3px solid black;
-  margin: 10px auto;
-  width: 98%;
+ul.tabs li.current{
+  background: $secondary-color;
+  color: $primary-color;
 }
 
-article {
+.tab-link {
+  border-top: 3px solid black;
+  border-right: 3px solid black;
+  border-bottom: 0px solid $third-color;
+  border-left: 3px solid black;
+
+}
+
+.tab-content{
+  background: #ededed;
+  display: none;
+  padding: 15px;
+}
+
+.tab-content.current{
   background-color: $third-color;
   border: 3px solid black;
-  height: 200px;
-  margin: 10px auto;
-  width: 98%;
+  display: inherit;
+}
+
+.dateTime, .dashBoard, h2 {
+  color: $secondary-color;
+  font-family: $primary-font;
+  font-size: 30px;
+}
+
+.dashBoard {
+  font-size: 25px;
+}
+
+input::placeholder {
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+ input[type=text] {
+   font-size: 20px;
+ }
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.existingContainer, .newContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.searchUser, .addUser {
+  border: solid 2px $secondary-color;
+  border-radius: 100px;
+  height: 50px;
+  width: 290px;
+}
+
+.searchCust, .addCust, .test {
+  background-color: $secondary-color;
+  border: solid 2px $secondary-color;
+  border-radius: 100px;
+  color: $primary-color;
+  height: 57px;
+  font-family: $primary-font;
+  font-size: 20px;
+  margin-left: 20px;
+  width: 120px;
 }
