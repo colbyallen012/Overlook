@@ -7,36 +7,36 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/bookings/bookings')
     return response.json()
   })
   .then(function(parsedData) {
-    bookingsFetchData = parsedData.bookings
+    bookingsFetchData = parsedData
   })
   .catch(err => console.error(err));
   
 
   class Bookings {
     constructor() {
-      this.bookings = []
+      this.bookings;
     }
 
     getBookings() {
-      this.bookings.push(bookingsFetchData)
+      this.bookings = bookingsFetchData
       console.log('Bookings',this.bookings)
     }
 
     findTodaysBookings(today) {
       console.log(today)
-      let date = this.bookings[0].filter(booking => {
+      let date = this.bookings.bookings.filter(booking => {
         return booking.date === today
       })
 
-      DOMupdates.displayTodaysBookings(this.bookings[0].length - date.length)
+      DOMupdates.displayTodaysBookings(this.bookings.bookings.length - date.length)
     }
 
     percentBookedToday(today) {
-      let todayDate = this.bookings[0].filter(booking => {
+      let todayDate = this.bookings.bookings.filter(booking => {
         return booking.date === today
       })
 
-      DOMupdates.displayPercentBooked(todayDate.length / this.bookings[0].length)
+      DOMupdates.displayPercentBooked(todayDate.length / this.bookings.bookings.length)
     }
 
   }

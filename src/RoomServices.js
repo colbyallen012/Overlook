@@ -6,18 +6,18 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/room-services/roomServ
     return response.json()
   })
   .then(function(parsedData) {
-    servicesFetchData = parsedData.roomServices
+    servicesFetchData = parsedData
   })
   .catch(err => console.error(err));
   
 
   class RoomServices {
     constructor() {
-      this.services = []
+      this.services;
     }
 
     getServices(){
-      this.services.push(servicesFetchData)
+      this.services = servicesFetchData
       console.log('Services',this.services)
     }
 

@@ -33,7 +33,7 @@ class Dashboard {
   }
 
   getTodaysEarned() {
-    let todaysBookings = this.bookings.bookings[0].filter(booking => {
+    let todaysBookings = this.bookings.bookings.bookings.filter(booking => {
       return booking.date === this.today
     })
 
@@ -41,7 +41,7 @@ class Dashboard {
       return roomNum.roomNumber
     })
 
-    let roomsOccupied = this.rooms.rooms[0].reduce((acc, room) => {
+    let roomsOccupied = this.rooms.rooms.rooms.reduce((acc, room) => {
       todaysRooms.forEach(num => {
         if(room.number === num){
           acc.push(room)
@@ -55,7 +55,8 @@ class Dashboard {
       return acc;
     },0)
 
-    let todaysServices = this.roomServices.services[0].filter(day=> {
+    console.log(this.roomServices.services)
+    let todaysServices = this.roomServices.services.roomServices.filter(day=> {
       return day.date === this.today
     })
 
@@ -70,7 +71,7 @@ class Dashboard {
   }
 
   saveUser(user){
-    this.users.saveSeachedUser(user);
+    this.users.saveSearchedUser(user);
     this.users.findUser();
   }
 

@@ -1,11 +1,20 @@
 import chai from 'chai';
 import Users from '../src/Users.js';
+import DOMupdates from '../src/DOMupdates';
+import Usersdata from '../src/Usersdata.js';
 const expect = chai.expect;
+import spies from 'chai-spies';
+chai.use(spies);
+
+
+chai.spy.on(DOMupdates, 'displayNoUser',  () => true);
+chai.spy.on(DOMupdates, 'displaySearchedUser',  () => true);
+
 
 describe('Users', function() {
   let users;
   beforeEach(function () {
-    users = new Users();
+    users = new Users(Usersdata);
   });
 
   it('should be a function', function() {
@@ -17,6 +26,20 @@ describe('Users', function() {
   });
 
   it('should have default properties', function() {
-    expect(users.users).to.deep.equal([])
+    users.users = Usersdata
+    expect(users.users).to.be.an('object')
+  })
+
+  it('should save a user after it has been searched from the dash', function() {
+    users.users = Usersdata
+    users.saveSearchedUser('Autumn Toy');
+    expect(users.searchedUser).to.be.a('string')
+  })
+
+  it('should find a user in the data base that matches the saved user from input', function() {
+    users.users = Usersdata.users;
+    users.saveSearchedUser('Autumn Toy');
+    users.findUser();
+    expect(users.matchedUpUser.name).to.be.a('string')
   })
 });
