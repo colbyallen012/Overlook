@@ -5,11 +5,16 @@ import Dashboard from './Dashboard.js'
 import DOMupdates from './DOMupdates';
 
 let dashboard = new Dashboard()
-var moment = require('moment');
 
 $(document).ready(() => {
-  let todaysDate = moment().format('DD/MM/YYYY');
-  DOMupdates.displayTime(todaysDate, dashboard);
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0');
+  var yyyy = today.getFullYear();
+
+  today = dd + '/' + mm + '/' + yyyy;
+
+  DOMupdates.displayTime(today, dashboard);
 });
 
 $(document).ready(function(){
@@ -35,6 +40,11 @@ $('.searchCust').on('click', function(e) {
 $('.addCust').on('click', function(e) {
   e.preventDefault(e);
   DOMupdates.addCustomer(dashboard)
+});
+
+$('.searchAllOrders').on('click', function(e) {
+  e.preventDefault(e);
+  DOMupdates.searchOrders(dashboard)
 });
 
 

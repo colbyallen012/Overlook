@@ -7,11 +7,7 @@ import DOMupdates from './DOMupdates.js';
 
 class Dashboard {
   constructor() {
-    // this.today; 
-    // this.users;
-    // this.rooms;
-    // this.bookings;
-    // this.roomServices;
+    this.today; 
     this.users = new Users()
     this.bookings = new Bookings();
     this.rooms = new Rooms();
@@ -70,6 +66,11 @@ class Dashboard {
     DOMupdates.todaysRevenue(totalRevenue)
   }
 
+  saveOrderSearch(order) {
+    this.roomServices.saveSearchedDate(order)
+    this.roomServices.displaySearchedOrder()
+  }
+
   saveUser(user){
     this.users.saveSearchedUser(user);
     this.users.findUser();
@@ -77,6 +78,12 @@ class Dashboard {
 
   addUser(user){
     this.users.saveAddedUser(user);
+  }
+
+  displayTodaysOrders() {
+    let today = this.today
+    console.log(today)
+    this.roomServices.displayTodaysOrders(today)
   }
 
 

@@ -23,4 +23,15 @@ describe('Room Services', function() {
     roomServices.services = RoomServicesdata
     expect(roomServices.services).to.be.an('object')
   })
+
+  it('should save a date that has been searched', function() {
+    roomServices.services = RoomServicesdata
+    roomServices.saveSearchedDate('21/10/2019');
+    expect(roomServices.searchedDate).to.equal('21/10/2019')
+  })
+
+  it.skip('should display orders when searched by a date', function() {
+    roomServices.services = roomServices.roomServices
+    roomServices.displaySearchedOrder()
+  })
 });
