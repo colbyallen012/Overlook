@@ -9,6 +9,7 @@ chai.use(spies);
 
 chai.spy.on(DOMupdates, 'displayNoUser',  () => true);
 chai.spy.on(DOMupdates, 'displaySearchedUser',  () => true);
+chai.spy.on(DOMupdates, 'displayAddedUser',  () => true);
 
 
 describe('Users', function() {
@@ -41,5 +42,11 @@ describe('Users', function() {
     users.saveSearchedUser('Autumn Toy');
     users.findUser();
     expect(users.matchedUpUser.name).to.be.a('string')
+  })
+
+  it('should save an user that has been added', function() {
+    users.users = Usersdata.users;
+    users.saveAddedUser('Autumn Toy');
+    expect(users.addedUser).to.equal('Autumn Toy')
   })
 });
