@@ -1,6 +1,6 @@
 const Bookingsdata = {
+  bookings: {
   bookings: [
-    [
   {
   userID: 78,
   date: "21/08/2019",
@@ -500,9 +500,7 @@ const Bookingsdata = {
   userID: 18,
   date: "29/09/2019",
   roomNumber: 13
-  }
-]
-[
+  },
   {
   userID: 61,
   date: "16/01/2020",
@@ -1004,7 +1002,7 @@ const Bookingsdata = {
   roomNumber: 120
   }
 ]
-]
+  }
 }
 
 export default Bookingsdata

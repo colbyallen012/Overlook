@@ -1,11 +1,14 @@
 import chai from 'chai';
 import Rooms from '../src/Rooms.js';
+import Roomsdata from '../src/Roomsdata.js';
 const expect = chai.expect;
+import spies from 'chai-spies';
+chai.use(spies);
 
 describe('Rooms', function() {
   let rooms;
   beforeEach(function () {
-    rooms = new Rooms();
+    rooms = new Rooms(Roomsdata);
   });
 
   it('should be a function', function() {
@@ -17,6 +20,7 @@ describe('Rooms', function() {
   });
 
   it('should have default properties', function() {
-    expect(rooms.rooms).to.deep.equal([])
+    rooms.rooms = Roomsdata
+    expect(rooms.rooms).to.be.an('object')
   })
 });
