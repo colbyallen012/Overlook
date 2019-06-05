@@ -51,7 +51,6 @@ class Dashboard {
       return acc;
     },0)
 
-    console.log(this.roomServices.services)
     let todaysServices = this.roomServices.services.roomServices.filter(day=> {
       return day.date === this.today
     })
@@ -82,10 +81,33 @@ class Dashboard {
 
   displayTodaysOrders() {
     let today = this.today
-    console.log(today)
     this.roomServices.displayTodaysOrders(today)
   }
 
+  displayCurUserOrders() {
+    this.users.displayCurUserOrders(this.today)
+  }
+
+  displayCurUserBookings() {
+    this.users.displayCurUserBookings(this.today)
+  }
+
+  searchAvailableRooms(){
+    this.bookings.displayAvailableRooms(this.today)
+  }
+
+  saveNewBooking(numb) {
+    this.rooms.displayNewBooking(numb)
+  }
+
+  makeNewOrder(){
+    this.roomServices.displayAllPossOrders()
+  }
+
+  saveNewOrder(order) {
+    let savedOrder = order.toLowerCase();
+    this.roomServices.updateUserOrder(savedOrder)
+  }
 
 }
 

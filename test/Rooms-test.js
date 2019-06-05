@@ -1,9 +1,12 @@
 import chai from 'chai';
 import Rooms from '../src/Rooms.js';
 import Roomsdata from '../src/Roomsdata.js';
+import DOMupdates from '../src/DOMupdates';
 const expect = chai.expect;
 import spies from 'chai-spies';
 chai.use(spies);
+
+chai.spy.on(DOMupdates, 'displayBookedRoom',  () => true);
 
 describe('Rooms', function() {
   let rooms;
@@ -22,5 +25,12 @@ describe('Rooms', function() {
   it('should have default properties', function() {
     rooms.rooms = Roomsdata
     expect(rooms.rooms).to.be.an('object')
+    expect(rooms.numb).to.be.an('array')
+    expect(rooms.roomType).to.be.an('array')
+    expect(rooms.hasBidet).to.be.an('array')
+    expect(rooms.bedSize).to.be.an('array')
+    expect(rooms.bedCount).to.be.an('array')
+    expect(rooms.cost).to.be.an('array')
   })
+
 });

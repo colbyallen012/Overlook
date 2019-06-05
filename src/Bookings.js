@@ -1,5 +1,6 @@
 import DOMupdates from './DOMupdates.js'
 import fetch from 'cross-fetch';
+import Rooms from './Rooms.js'
 
 var bookingsFetchData;
 fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/bookings/bookings')
@@ -15,6 +16,11 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/bookings/bookings')
   class Bookings {
     constructor() {
       this.bookings;
+      this.userRoom = [];
+      this.userBookDate = [];
+      this.bookingsToday;
+      this.bookingsPercent;
+      this.todaysRoomsBooked;
     }
 
     getBookings() {
@@ -23,10 +29,11 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/bookings/bookings')
     }
 
     findTodaysBookings(today) {
-      console.log(today)
       let date = this.bookings.bookings.filter(booking => {
         return booking.date === today
       })
+
+      this.bookingsToday = date
 
       DOMupdates.displayTodaysBookings(this.bookings.bookings.length - date.length)
     }
@@ -36,7 +43,51 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/bookings/bookings')
         return booking.date === today
       })
 
+      this.bookingsPercent = todayDate.length / this.bookings.bookings.length
+
       DOMupdates.displayPercentBooked(todayDate.length / this.bookings.bookings.length)
+    }
+
+    displaySearchedUsersBookings(user, today) {
+      this.getBookings();
+      let searchedUserID = user.id
+
+      let userBookings = this.bookings.bookings.filter(booking => {
+        return booking.userID === searchedUserID
+      })
+
+      let todayUserBookings = this.bookings.bookings.find(booking => {
+        return booking.date === today
+      })
+
+      userBookings.forEach(booking => {
+        this.userRoom.push(booking.roomNumber)
+      })
+
+      userBookings.forEach(booking => {
+        this.userBookDate.push(booking.date)
+      })
+
+      if(todayUserBookings === undefined){
+        DOMupdates.displaySearchedUserBookingsRoom(this.userRoom)
+        DOMupdates.displaySearchedUserBookingsDate(this.userBookDate)
+        DOMupdates.displayRoomsButton()
+      } else {
+        DOMupdates.displaySearchedUserBookingsRoom(this.userRoom)
+        DOMupdates.displaySearchedUserBookingsDate(this.userBookDate)
+      }
+
+    }
+
+    displayAvailableRooms(today) {
+      let todaysRooms = this.bookings.bookings.filter(booking => {
+        return booking.date === '21/08/2019'
+      })
+
+      this.todaysRoomsBooked = todaysRooms
+
+      this.rooms = new Rooms();
+      this.rooms.showRoomsAvailable(todaysRooms)
     }
 
   }

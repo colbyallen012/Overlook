@@ -49,4 +49,5 @@ describe('Users', function() {
     users.saveAddedUser('Autumn Toy');
     expect(users.addedUser).to.equal('Autumn Toy')
   })
+
 });
