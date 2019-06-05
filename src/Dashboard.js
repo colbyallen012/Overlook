@@ -14,7 +14,7 @@ class Dashboard {
     this.roomServices = new RoomServices();
   }
 
-  getDash(){
+  getDash() {
     this.users.getUsers();
     this.rooms.getRooms();
     this.bookings.getBookings();
@@ -25,7 +25,6 @@ class Dashboard {
 
   getTodaysDate(date) {
     this.today = JSON.stringify(date);
-    console.log('today:',this.today)
   }
 
   getTodaysEarned() {
@@ -39,17 +38,17 @@ class Dashboard {
 
     let roomsOccupied = this.rooms.rooms.rooms.reduce((acc, room) => {
       todaysRooms.forEach(num => {
-        if(room.number === num){
+        if (room.number === num) {
           acc.push(room)
         }
       })
       return acc;
-    },[])
+    }, [])
 
-    let roomRevenue = roomsOccupied.reduce((acc,room) => {
+    let roomRevenue = roomsOccupied.reduce((acc, room) => {
       acc += room.costPerNight
       return acc;
-    },0)
+    }, 0)
 
     let todaysServices = this.roomServices.services.roomServices.filter(day=> {
       return day.date === this.today
@@ -58,7 +57,7 @@ class Dashboard {
     let serviceRevenue = todaysServices.reduce((acc, services)=>{
       acc += services.totalCost
       return acc;
-    },0)
+    }, 0)
 
     let totalRevenue = parseFloat(roomRevenue + serviceRevenue).toFixed(2)
 
@@ -70,12 +69,12 @@ class Dashboard {
     this.roomServices.displaySearchedOrder()
   }
 
-  saveUser(user){
+  saveUser(user) {
     this.users.saveSearchedUser(user);
     this.users.findUser();
   }
 
-  addUser(user){
+  addUser(user) {
     this.users.saveAddedUser(user);
   }
 
@@ -92,7 +91,7 @@ class Dashboard {
     this.users.displayCurUserBookings(this.today)
   }
 
-  searchAvailableRooms(){
+  searchAvailableRooms() {
     this.bookings.displayAvailableRooms(this.today)
   }
 
@@ -100,7 +99,7 @@ class Dashboard {
     this.rooms.displayNewBooking(numb)
   }
 
-  makeNewOrder(){
+  makeNewOrder() {
     this.roomServices.displayAllPossOrders()
   }
 

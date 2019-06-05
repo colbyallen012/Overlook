@@ -1,6 +1,5 @@
 import chai from 'chai';
 import Dashboard from '../src/Dashboard.js';
-import DOMupdates from '../src/DOMupdates';
 const expect = chai.expect;
 import spies from 'chai-spies';
 chai.use(spies);
