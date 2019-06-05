@@ -21,6 +21,7 @@ class Rooms {
     this.bedSize = [];
     this.bedCount = [];
     this.cost = [];
+    this.occupiedRooms;
   }
 
   getRooms() {
@@ -30,15 +31,16 @@ class Rooms {
   showRoomsAvailable(todaysRooms) {
     this.getRooms();
     let occupiedRooms = todaysRooms
-
+    console.log(this.occupiedRooms)
     let available = this.rooms.rooms.reduce((acc, room) => {
       occupiedRooms.forEach(num => {
         if (room.number !== num.roomNumber) {
           acc.push(room)
         }
       })
-      return acc;
-    }, [])
+        return acc;
+      }, [])
+      console.log(available)
 
     available.forEach(room =>{
       this.numb.push(room.number)
