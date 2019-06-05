@@ -78,8 +78,9 @@ class Bookings {
   }
 
   displayAvailableRooms(today) {
+    console.log(this.bookings)
     let todaysRooms = this.bookings.bookings.filter(booking => {
-      return booking.date === today
+      return booking.date === '21/08/2019'
     })
 
     this.todaysRoomsBooked = todaysRooms

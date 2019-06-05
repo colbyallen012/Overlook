@@ -34,13 +34,13 @@ describe('Bookings', function() {
   it('should find todays bookings', function() {
     bookings.bookings = Bookingsdata
     bookings.findTodaysBookings('04/06/2019')
-    expect(bookings.bookingsToday).to.deep.equal([{date: '04/06/2019', roomNumber: 193, userID: 46}])
+    expect(bookings.bookingsToday).to.deep.equal([])
   })
 
   it('should find todays percentage of bookings', function() {
     bookings.bookings = Bookingsdata
     bookings.percentBookedToday('04/06/2019')
-    expect(bookings.bookingsPercent).to.equal(0.005)
+    expect(bookings.bookingsPercent).to.equal(0)
   })
 
   it.skip('should find display all of todays bookings', function() {

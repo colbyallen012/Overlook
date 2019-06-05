@@ -24,13 +24,17 @@ class Dashboard {
   }
 
   getTodaysDate(date) {
-    this.today = JSON.stringify(date);
+    this.today = date;
   }
 
   getTodaysEarned() {
     let todaysBookings = this.bookings.bookings.bookings.filter(booking => {
+    console.log(this.today)
       return booking.date === this.today
     })
+
+    console.log(todaysBookings)
+
 
     let todaysRooms = todaysBookings.map(roomNum => {
       return roomNum.roomNumber

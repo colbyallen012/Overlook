@@ -41,7 +41,7 @@ describe('Users', function() {
     users.users = Usersdata.users;
     users.saveSearchedUser('Autumn Toy');
     users.findUser();
-    expect(users.matchedUpUser.name).to.be.a('string')
+    expect(users.matchedUpUser.name).to.equal('Autumn Toy')
   })
 
   it('should save an user that has been added', function() {
