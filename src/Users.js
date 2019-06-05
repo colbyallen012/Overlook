@@ -1,5 +1,7 @@
 import fetch from 'cross-fetch';
 import DOMupdates from './DOMupdates';
+import RoomServices from './RoomServices'
+import Bookings from './Bookings.js'
 
 var usersFetchData;
 fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/users/users')
@@ -34,6 +36,8 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/users/users')
       let matchUser = this.users.users.find(user => {
        return user.name.toLowerCase() === curUser
       })
+
+      console.log(matchUser)
       
       this.matchedUpUser = matchUser
       if(this.matchedUpUser === undefined){
@@ -46,6 +50,28 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/users/users')
     saveAddedUser(user) {
       this.addedUser = user;
       DOMupdates.displayAddedUser(this.addedUser)
+    }
+
+    displayCurUserOrders(today) {
+      let curSearchedUser = this.matchedUpUser;
+      if(curSearchedUser === undefined){
+        DOMupdates.displayNoUser()
+      } else {
+      this.RoomServices = new RoomServices();
+      this.RoomServices.displayUserOrders(curSearchedUser);
+      this.RoomServices.displayUserTotalToday(curSearchedUser, today);
+      this.RoomServices.displayUserTotalAllTime(curSearchedUser)
+      }
+    }
+
+    displayCurUserBookings(today) {
+      let curSearchedUser = this.matchedUpUser;
+      if(curSearchedUser === undefined) {
+        DOMupdates.addBooking()
+      } else {
+        this.Bookings = new Bookings();
+        this.Bookings.displaySearchedUsersBookings(curSearchedUser, today)
+      }
     }
 
   }

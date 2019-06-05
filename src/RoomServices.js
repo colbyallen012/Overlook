@@ -21,12 +21,19 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/room-services/roomServ
       this.searchedDate;
       this.todaysSearchedFood = []
       this.todaysSearchedPrice = [];
-      this.todaysSearchedUsers = [];      
+      this.todaysSearchedUsers = [];
+      this.userDate=[]   
+      this.userFood=[];
+      this.userPrice=[]; 
+      this.userTodayTotal;
+      this.userAllTotal;
+      this.possibleFoodOrder = [];
+      this.possiblePrice = [];
     }
 
     getServices(){
       this.services = servicesFetchData
-      console.log('Services',this.services)
+      // console.log('Services',this.services)
     }
 
     saveSearchedDate(date) {
@@ -55,12 +62,10 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/room-services/roomServ
       DOMupdates.displaySearchedFoodOrders(this.todaysSearchedFood)
       DOMupdates.displaySearchedPriceOrders(this.todaysSearchedPrice)
 
-      console.log(searched)
+      // console.log(searched)
     }
 
     displayTodaysOrders(today) {
-      console.log(this.services)
-
       let todaysOrders = this.services.roomServices.filter(service => {
         return service.date === "21/10/2019"
       })
@@ -80,6 +85,100 @@ fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/room-services/roomServ
       DOMupdates.displayTodaysUserOrders(this.todaysUsers)
       DOMupdates.displayTodaysFoodOrders(this.todaysFood)
       DOMupdates.displayTodaysPriceOrders(this.todaysPrice)
+    }
+
+    displayUserOrders(user) {
+      this.getServices() 
+      let userOrders = this.services.roomServices.filter(orders => {
+        return orders.userID === user.id
+      })
+
+      userOrders.forEach(order => {
+        this.userDate.push(order.date);
+      })
+
+      userOrders.forEach(order => {
+        this.userFood.push(order.food);
+      })
+
+      userOrders.forEach(order => {
+        this.userPrice.push(order.totalCost);
+      })
+
+      DOMupdates.displayCurrentUsersName(user.name)
+      DOMupdates.displayCurrentUsersDate(this.userDate)
+      DOMupdates.displayCurrentUsersFoodOrders(this.userFood)
+      DOMupdates.displayCurrentUsersPriceOrders(this.userPrice)
+    }
+
+    displayUserTotalToday(user, today) {
+      this.getServices();
+      let allOrders = this.services.roomServices.filter(orders => {
+        return orders.userID === user.id
+      })
+
+      let todayOrders = allOrders.filter(order => {
+        return order.date === '05/11/2019'
+      })
+      
+      let todayTotal = todayOrders.reduce((acc, total) => {
+        acc += total.totalCost
+        return acc;
+      },0)
+
+      this.userTodayTotal = todayTotal
+
+      DOMupdates.displayParticularDayOrder(today, user, todayTotal)
+    }
+
+    displayUserTotalAllTime(user) {
+      this.getServices();
+      let allOrders = this.services.roomServices.filter(orders => {
+        return orders.userID === user.id
+      })
+
+      let allTotal = allOrders.reduce((acc, total) => {
+        acc += total.totalCost
+        return acc;
+      },0)
+
+      this.userAllTotal = allTotal
+
+      DOMupdates.displayAllTimeOrder(user, allTotal)
+
+      // console.log(allTotal)
+
+    }
+
+    displayAllPossOrders() {
+      let allSams = this.services.roomServices.reduce((acc,sam)=>{
+        if(acc.indexOf(sam.food) === -1){
+          acc.push(sam.food)
+        }
+        return acc;
+      },[])
+
+      this.possibleFoodOrder.push(allSams)
+
+      DOMupdates.displaySammies(allSams)
+      
+      let allPrices = this.services.roomServices.reduce((acc,sam)=>{
+        if(acc.indexOf(sam.totalCost) === -1){
+          acc.push(sam.totalCost)
+        }
+        return acc;
+      },[])
+
+      this.possiblePrice.push(allPrices)
+
+
+      DOMupdates.displaySammiesPrices(allPrices)
+    }
+
+    updateUserOrder(order) {
+      let pickedOrder = this.services.roomServices.find(service => {
+        return service.food.toLowerCase() === order
+      })
     }
 
   }

@@ -1,5 +1,4 @@
 const Roomsdata = {
-  rooms: {
     rooms: [
       {
       number: 1,
@@ -1603,4 +1602,5 @@ const Roomsdata = {
       }
       ]
   }
-}
+
+export default Roomsdata;

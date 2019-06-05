@@ -12,27 +12,43 @@
   <div class="container">
     <ul class="tabs">
       <li class="tab-link current" data-tab="tab-1">Main</li>
-      <li class="tab-link" data-tab="tab-2">Orders</li>
-      <li class="tab-link" data-tab="tab-3">Rooms & Bookings</li>
-      <li class="tab-link" data-tab="tab-4">Customers</li>
+      <li class="tab-link" data-tab="tab-2">Customers</li>
+      <li class="tab-link" data-tab="tab-3">Orders</li>
+      <li class="tab-link" data-tab="tab-4">Rooms & Bookings</li>
     </ul>
     <div id="tab-1" class="tab-content current">
         <h2 class='dateTime'>Dashboard for: <span id='datetime'><span></h2>
+        <article class='buttonContainer'>
         <button class='test'>Start Today</button>
+        </article>
         <p class='dashBoard'>Rooms Available: <span id='todayBookings'><span></span></p>
         <p class='dashBoard'>Total Owed/Earned: $ <span id='todayRevenue'></span></p>
         <p class='dashBoard'>Percent Of Rooms Booked: <span id='percentBooked'></span>%</p>
     </div>
     <div id="tab-2" class="tab-content">
-        <h2>Orders info/room services</h2>
+      <h2 class='customerDisplay'>Customer Info</h2>
+      <article class='inputContainer'>
+        <article class='existingContainer'>
+          <input type='text' class='searchUser' placeholder="Search for an existing customer">
+          <button class='searchCust'>Search</button>
+        </article>
+        <article class='newContainer'>
+          <input type='text' class='addUser'placeholder="Add a new customer">
+          <button class='addCust'>Add</button>
+        </article>
+      </article>
+    </div>
+    <div id="tab-3" class="tab-content">
+        <h2 class='orders'>Orders info/room services</h2>
+        <div class='curUserOrder'></div>
         <article class='orderContainer'>
           <input type='text' class='searchOrders'placeholder="Search existing orders DD/MM/YYYY">
           <button class='searchAllOrders'>Search</button>
         </article>
         <article class='orderTables'>
-        <table class='ordersTable'>
+        <table class='searchedOrdersTable'>
           <tr>
-            <td>Searched Orders</td>
+            <td class='heading'>Searched Orders</td>
           </tr>
           <tr>
             <td class='title'>Customer</td>
@@ -67,10 +83,10 @@
         </table>
         <table class='ordersTable'>
           <tr>
-            <td>Today's Orders</td>
+            <td class='heading'>Today's Orders</td>
           </tr>
           <tr>
-            <td class='title'>Customer</td>
+            <td class='title customerTitle'>Customer</td>
             <td class='title'>Order</td>
             <td class='title'>Price</td>
           </tr>
@@ -101,22 +117,1964 @@
           </tr>
         </table>
       </article>
-    </div>
-    <div id="tab-3" class="tab-content">
-        <h2>Room & Bookings Info</h2>
+      <div class='totalSpentDay'></div>
+      <div class='totalSpentAll'></div>
+      <article class='addOrderContainer'>
+        <button class='addOrder'>Add New Order</button>
+        <input class='orderPick' placeholder='Please choose an order'>
+        <button class='chooseOrder'>Submit Order</button>
+      </article>
+      <table class='allOrders'>
+        <h3 class='foodMenu'>Services Menu</h3>
+        <tr>
+          <td class='title'>Food Type</td>
+          <td class='title'>Price</td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+        <tr>
+          <td class='foodType'></td>
+          <td class='foodPrice'></td>
+        </tr>
+      </table>
     </div>
     <div id="tab-4" class="tab-content">
-        <h2 class='customerDisplay'>Customer Info</h2>
-        <article class='inputContainer'>
-          <article class='existingContainer'>
-            <input type='text' class='searchUser' placeholder="Search for an existing customer">
-            <button class='searchCust'>Search</button>
+        <h2>Room & Bookings Info</h2>
+        <h3 class='bookingHeading'>Bookings</h3>
+        <table class='bookingsTable'>
+          <tr>
+            <td class='title'>Room Number</td>
+            <td class='title'>Date</td>
+          </tr>
+          <tr>
+            <td class='userRoom'>Room #</td>
+            <td class='userRoomDate'>Date</td>
+          </tr>
+          <tr>
+            <td class='userRoom'>Room #</td>
+            <td class='userRoomDate'>Date</td>
+          </tr>
+          <tr>
+            <td class='userRoom'>Room #</td>
+            <td class='userRoomDate'>Date</td>
+          </tr>
+          <tr>
+            <td class='userRoom'>Room #</td>
+            <td class='userRoomDate'>Date</td>
+          </tr>
+          <tr>
+            <td class='userRoom'>Room #</td>
+            <td class='userRoomDate'>Date</td>
+          </tr>
+          <tr>
+            <td class='userRoom'>Room #</td>
+            <td class='userRoomDate'>Date</td>
+          </tr>
+        </table>
+        <div class='addBooking'>
+          <h3 class='showBookInstructions'>No bookings for today, please click 'show rooms' to show all available.</h3>
+          <article class='addBookingContainer'>
+            <button class='showBookings'>Show Rooms</button>
+            <input type='number' class='bookingPick' placeholder='Please pick a room Number'>
+            <button class='chooseBooking'>Submit Booking</button>
           </article>
-          <article class='newContainer'>
-            <input type='text' class='addUser' placeholder="Add a new customer">
-            <button class='addCust'>Add</button>
-          </article>
-        </article>
+        </div>
+        <table class='availableRooms'>
+          <tr>
+            <td class='number'>Room Number</td>
+            <td class='type'>Room Type</td>
+            <td class='bidet'>Bidet Available</td>
+            <td class='bed'>Bed Size</td>
+            <td class='bednumb'>Number of Beds</td>
+            <td class='costs'>Cost of Room</td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+              <td class='roomNumb'></td>
+              <td class='roomType'></td>
+              <td class='hasBidet'></td>
+              <td class='bedSize'></td>
+              <td class='bedNums'></td>
+              <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+          <tr>
+            <td class='roomNumb'></td>
+            <td class='roomType'></td>
+            <td class='hasBidet'></td>
+            <td class='bedSize'></td>
+            <td class='bedNums'></td>
+            <td class='cost'></td>
+          </tr>
+        </table>
     </div>
   </div>
   </body>

@@ -602,5 +602,7 @@ const RoomServicesdata = {
       totalCost: 17.07
       }
       ]
+    }
   }
-}
+
+  export default RoomServicesdata;

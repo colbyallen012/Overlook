@@ -18,6 +18,7 @@ header {
 
 .building {
   height: 110px;
+  margin-top: 5px;
   width: 120px;
 }
 
@@ -80,16 +81,22 @@ ul.tabs li.current{
   color: $secondary-color;
   font-family: $primary-font;
   font-size: 30px;
+  text-align: center;
 }
 
 .dashBoard {
   font-size: 25px;
 }
-
-.title, .userOrder, .foodOrder, .priceOrder, .userSearchedOrder, .foodSearchedOrder, .priceSearchedOrder {
+ 
+td {
   border: 3px solid black;
   font-family: $primary-font;
   font-size: 20px;
+}
+
+.title, .heading, .curUserOrder, .bookingHeading {
+  font-size: 30px;
+  text-align: center;
 }
 
 input::placeholder {
@@ -97,7 +104,7 @@ input::placeholder {
   padding-left: 5px;
 }
 
- input[type=text] {
+ input[type=text], input[type=number] {
    font-size: 20px;
  }
 
@@ -107,24 +114,37 @@ input::placeholder {
   margin-top: 10px;
 }
 
-.existingContainer, .newContainer, .orderContainer, .orderTables {
+table {
+  margin-top: 20px;
+  width: 40%;
+}
+
+.existingContainer, .newContainer, .orderContainer, .orderTables, .bookingsTable, .availableRooms, .buttonContainer, .addOrderContainer, .addBookingContainer {
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
+  justify-content: center;
+  margin: 10px auto;
 }
 
 .orderTables {
   justify-content: space-evenly;
 }
 
-.searchUser, .addUser, .searchOrders {
+.totalSpentDay, .totalSpentAll {
+  font-family: $primary-font;
+  font-size: 30px;
+  margin: 50px;
+  text-align: center;
+}
+
+.searchUser, .addUser, .searchOrders, .bookingPick, .orderPick {
   border: solid 2px $secondary-color;
   border-radius: 100px;
   height: 50px;
   width: 290px;
 }
 
-.searchCust, .addCust, .test, .searchAllOrders {
+.searchCust, .addCust, .test, .searchAllOrders, .chooseOrder, .chooseBooking, .showBookings, .addOrder {
   background-color: $secondary-color;
   border: solid 2px $secondary-color;
   border-radius: 100px;
@@ -133,5 +153,9 @@ input::placeholder {
   font-family: $primary-font;
   font-size: 20px;
   margin-left: 20px;
-  width: 120px;
+  width: 160px;
+}
+
+.showBookInstructions {
+  text-align: center;
 }

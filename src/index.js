@@ -15,6 +15,11 @@ $(document).ready(() => {
   today = dd + '/' + mm + '/' + yyyy;
 
   DOMupdates.displayTime(today, dashboard);
+  $('.showBookings').hide()
+  $('.availableRooms').hide()
+  $('.addOrder').hide()
+  $('.allOrders').hide()
+  $('.foodMenu').hide()
 });
 
 $(document).ready(function(){
@@ -40,11 +45,34 @@ $('.searchCust').on('click', function(e) {
 $('.addCust').on('click', function(e) {
   e.preventDefault(e);
   DOMupdates.addCustomer(dashboard)
+  $('.showBookings').show()
 });
 
 $('.searchAllOrders').on('click', function(e) {
   e.preventDefault(e);
   DOMupdates.searchOrders(dashboard)
 });
+
+$('.showBookings').on('click', function(e) {
+  e.preventDefault(e);
+  DOMupdates.searchAvailableRooms(dashboard)
+})
+
+$('.chooseBooking').on('click', function(e) {
+  e.preventDefault(e);
+  DOMupdates.makeNewBooking(dashboard);
+  DOMupdates.makeRoomServiceOrder(dashboard)
+})
+
+$('.addOrder').on('click', function(e) {
+  e.preventDefault(e);
+  DOMupdates.showOrders();
+})
+
+$('.chooseOrder').on('click', function(e) {
+  e.preventDefault(e);
+  DOMupdates.makeNewOrder(dashboard);
+})
+
 
 
