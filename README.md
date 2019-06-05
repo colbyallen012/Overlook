@@ -2,7 +2,7 @@
 
 ## Abstract
 
-This was a two week project at Turing School of Software & Design, and was made to help us learn how to write a program from scratch. As well as learn OOP patterns, separate business-logic code from view-related code, and create a testing suite that thoroughly tests all functionality of a client-side application.
+This was a one week project at Turing School of Software & Design, and was made to help us learn how to write a program from scratch. As well as learn OOP patterns, separate business-logic code from view-related code, and create a testing suite that thoroughly tests all functionality of a client-side application.
 
 ## Setup
 Clone down the repo.
